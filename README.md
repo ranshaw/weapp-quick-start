@@ -2,14 +2,6 @@
 
 采用原生小程序+weappx开发
 
-## 参考文档
-
-[项目脚手架参考](https://github.com/tolerance-go/weapp-start)
-
-[状态管理框架](https://github.com/tolerance-go/weappx)
-
-[小程序文档](https://developers.weixin.qq.com/miniprogram/dev/)
-
 ## Install
 
 安装脚手架工具
@@ -37,7 +29,11 @@ npm run build
 ```javascript
 npm run new
 ```
-自动格式化代码
+开启mock服务
+```javascript
+weapp-start mock
+```
+ 自动格式化代码
 ```javascript
 npm run format
 ```
@@ -53,3 +49,11 @@ npm run format
 
 #### 3.防止快速点击按钮触发多次跳转
 参照example中的预加载按钮
+
+## 参考文档
+
+[项目脚手架参考](https://github.com/tolerance-go/weapp-start)
+
+[状态管理框架](https://github.com/tolerance-go/weappx)
+
+[小程序文档](https://developers.weixin.qq.com/miniprogram/dev/)
