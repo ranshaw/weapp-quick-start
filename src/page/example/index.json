@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "🌱",
+  "usingComponents": {
+    "component-test": "/components/example/index"
+  }
+}

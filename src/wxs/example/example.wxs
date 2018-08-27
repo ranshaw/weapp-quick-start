@@ -1,0 +1,13 @@
+var foo = "'hello world' from comm.wxs";
+var bar = function (d) {
+  return d;
+}
+var isShow = function (param) {
+  console.log('执行wxs')
+  return param
+}
+module.exports = {
+  foo: foo,
+  bar: bar,
+  isShow: isShow,
+};

@@ -1,0 +1,34 @@
+{
+  "pages": ["page/example/index", "page/example/test/index"],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#EE5C29"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#EE5C29",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "page/example/index",
+        "text": "首页",
+        "iconPath": "assets/images/tab/ico1.png",
+        "selectedIconPath": "assets/images/tab/ico1-a.png"
+      },
+      {
+        "pagePath": "page/example/test/index",
+        "text": "测试",
+        "iconPath": "assets/images/tab/ico3.png",
+        "selectedIconPath": "assets/images/tab/ico3-a.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

@@ -1,0 +1,45 @@
+<import src="../../template/example/example.wxml" />
+<wxs src="../../wxs/example/example.wxs" module="example" />
+<view class="container">
+  <component-test>
+    <view slot="title">
+      <view class="title">状态管理示例</view>
+    </view>
+    <view slot="info">
+      <view class="stage">计数器数值：{{count}}</view>
+      <view>
+        <text>步数值：</text>
+        <input placeholder="请输入步数" auto-focus="auto-focus" value="{{inputValue}}" bindinput="inputChange" />
+      </view>
+      <blcok style="display:flex;">
+        <button bind:tap="plus">+</button>
+        <button bind:tap="sub">-</button>
+      </blcok>
+    </view>
+  </component-test>
+
+  <template  is="test">
+
+  </template>
+
+  <component-test>
+  <view class="title" slot="title">
+    预加载数据
+  </view>
+  <button slot="info" catchtap="toLogin">预加载</button>
+  </component-test>
+
+  <component-test>
+  <view class="title" slot="title">
+     WXS
+  </view>
+  <view slot="info">
+      <view>WXS数据:{{example.foo}}</view>
+      <view>WXS传入数据: {{example.bar('我是传入的')}}</view>
+      <view wx:if="{{example.isShow(isShow)}}">判断是否显示</view>
+      <view> {{example.isShow(isShow)}} </view>
+      <button catchtap="isShowFn">是否显示</button>
+  </view>
+  </component-test>
+
+</view>

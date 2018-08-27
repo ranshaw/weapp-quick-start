@@ -1,0 +1,23 @@
+.test {
+  transform: translate(-50%, -50%)
+}
+
+.title {
+  padding-bottom: 20rpx;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info {
+  padding: 15rpx;
+}
+
+.temp {
+  margin: 15rpx 0;
+  padding-left: 20rpx;
+}
+
+button {
+  width: 30%;
+  margin: 0 auto;
+}

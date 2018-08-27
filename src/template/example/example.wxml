@@ -1,0 +1,5 @@
+<template  name="test">
+  <view class="temp">
+    测试模板template
+  </view>
+</template>

@@ -1,0 +1,6 @@
+<view>
+  测试预加载数据：{{name}}
+  <view wx:for="{{list}}" wx:key="index">
+    <view>{{item.name}}</view>
+  </view>
+</view>
