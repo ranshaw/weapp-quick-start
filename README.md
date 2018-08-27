@@ -1,6 +1,14 @@
 ## 在线选房小程序
 
-采用原生小程序+weappx开发
+采用原生小程序+weappx,支持多种插件和特性，包含开发小程序开发常用的示例。
+
+## 特性
+* 支持 npm 包引入
+* 支持 promise, async/await 等最新语法
+* 支持多种编译器，如 pug/less/stylus
+* 支持 ESlint
+* 支持本地 mock 数据
+* 支持发布前资源压缩
 
 ## Install
 
@@ -18,8 +26,6 @@ npm install
 ```javascript
 npm run dev  
 ```
-会生成一个dist文件夹，用小程序开发工具打开此文件夹，即可预览
-
 打包生产代码
 
 ```javascript
@@ -50,10 +56,9 @@ npm run format
 #### 3.防止快速点击按钮触发多次跳转
 参照example中的预加载按钮
 
-## 参考文档
+## 注意
+如果为window开发环境，需要修改依赖weapp-plugin-require中lib文件夹下的index.js，
+在118行和197行后面添加如下代码
+```javascript
+relativeDistPath = relativeDistPath.replace(/\\/g, '/')
 
-[项目脚手架参考](https://github.com/tolerance-go/weapp-start)
-
-[状态管理框架](https://github.com/tolerance-go/weappx)
-
-[小程序文档](https://developers.weixin.qq.com/miniprogram/dev/)
