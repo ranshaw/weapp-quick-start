@@ -9,7 +9,6 @@
 * 支持 ESlint
 * 支持本地 mock 数据
 * 支持发布前资源压缩
-
 ## Install
 
 安装脚手架工具
@@ -55,6 +54,8 @@ npm run format
 
 #### 3.防止快速点击按钮触发多次跳转
 参照example中的预加载按钮
+
+#### 4.对小程序原生api做了promise封装
 
 ## 注意
 如果为window开发环境，需要修改依赖weapp-plugin-require中lib文件夹下的index.js，
