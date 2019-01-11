@@ -1,9 +1,10 @@
-<import src="../../template/example/example.wxml" />
-<wxs src="../../wxs/example/example.wxs" module="example" />
+<import src="./template/index.wxml" />
+<wxs src="./wxs/index.wxs" module="example" />
 <view class="container">
+
   <component-test>
     <view slot="title">
-      <view class="title">状态管理示例</view>
+      <view class="title">父子组件交互</view>
     </view>
     <view slot="info">
       <view class="stage">计数器数值：{{count}}</view>
@@ -12,8 +13,8 @@
         <input placeholder="请输入步数" auto-focus="auto-focus" value="{{inputValue}}" bindinput="inputChange" />
       </view>
       <blcok style="display:flex;">
-        <button bind:tap="plus">+</button>
-        <button bind:tap="sub">-</button>
+        <button-test text= '+'></button-test>
+        <button-test text= '-'></button-test>
       </blcok>
     </view>
   </component-test>

@@ -1,5 +1,5 @@
-import { wxRequest } from '../../utils/wxRequest';
-import { codeSuccess } from '../../utils/constant';
+import { wxRequest } from '../../../utils/wxRequest';
+import { codeSuccess } from '../../../utils/constant';
 
 exports.navList = async params => {
   const ret = await wxRequest(

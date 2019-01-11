@@ -1,0 +1,4 @@
+
+<button bindtap="onClick">{{text}}</button>
+
+

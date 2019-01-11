@@ -1,5 +1,5 @@
 {
-  "pages": ["page/example/index", "page/example/test/index"],
+  "pages": ["page/example/index", "page/test/index"],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "",
@@ -17,7 +17,7 @@
         "selectedIconPath": "assets/images/tab/ico1-a.png"
       },
       {
-        "pagePath": "page/example/test/index",
+        "pagePath": "page/test/index",
         "text": "测试",
         "iconPath": "assets/images/tab/ico3.png",
         "selectedIconPath": "assets/images/tab/ico3-a.png"

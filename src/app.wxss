@@ -7,6 +7,11 @@ image {
   width: auto;
   height: auto;
 }
+view {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
 view.button-hover {
   opacity: 0.7;
 }

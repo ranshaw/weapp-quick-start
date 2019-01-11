@@ -1,5 +1,5 @@
 .test {
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 
 .title {
@@ -18,6 +18,5 @@
 }
 
 button {
-  width: 30%;
   margin: 0 auto;
 }

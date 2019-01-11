@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "🌱",
   "usingComponents": {
-    "component-test": "/components/example/index"
+    "component-test": "./components/example/index",
+    "button-test": "./components/button/index"
   }
 }
