@@ -1,4 +1,4 @@
-import { codeSuccess } from './constant';
+import { constant } from './config';
 import wxApi from './wxapi';
 // const env = 'prod'// uat
 const env = 'uat';
@@ -58,7 +58,7 @@ const filterResponse = res => {
     default:
   }
 
-  if (code !== codeSuccess) {
+  if (code !== constant.codeSuccess) {
     if (message.trim().length > 7) {
       // wepy.showToast({
       //   title: message,

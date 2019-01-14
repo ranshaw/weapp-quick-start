@@ -48,7 +48,7 @@ create.Page({
   },
   async onLoad() {
     console.log('加载页面', this.store);
-    // const ret = await navList();
+    const ret = await navList();
     // console.log('ret', ret);
     // console.log('preload', this.data.preloadObj);
 

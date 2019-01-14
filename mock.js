@@ -1,6 +1,13 @@
 module.exports = {
   '/api/hello-world'(req, res) {
-    res.end(`hello-world ${new Date().toString()}`);
+    // const { query, body } = req;
+    res.status(200).json({
+      code: 'S000000',
+      data: {
+        test: '11111',
+      },
+      msg: '请求成功！',
+    });
   },
 
   'GET /api/users': {

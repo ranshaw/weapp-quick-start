@@ -1,16 +1,16 @@
 import { wxRequest } from '../../../utils/wxRequest';
-import { codeSuccess } from '../../../utils/constant';
+import { api, constant } from '../../../utils/config';
 
 exports.navList = async params => {
   const ret = await wxRequest(
-    '/api/users',
+    api.index.users,
     {
       method: 'GET',
       body: JSON.stringify(params),
     },
     'prod'
   );
-  if (ret.code === codeSuccess) {
+  if (ret.code === constant.codeSuccess) {
     const { name, id, children } = ret.data;
     // 过滤无用数据
     return Object.assign(ret, {

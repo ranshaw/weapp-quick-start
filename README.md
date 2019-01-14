@@ -82,6 +82,8 @@ npm run format
 
 #### 5. 组件的嵌套不能超过 3 层，2 层最佳。
 
+#### 6. 利用 mock.js 模拟数据
+
 ## 注意
 
 如果为 window 开发环境，需要修改依赖 weapp-plugin-require 中 lib 文件夹下的 index.js，
