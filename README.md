@@ -1,6 +1,6 @@
 ## 快速开发小程序脚手架
 
-采用原生小程序+weappx,支持多种插件和特性，包含开发小程序开发常用的示例。
+采用原生小程序开发,支持多种插件和特性，包含开发小程序开发常用的示例。
 
 ## 特性
 
@@ -61,6 +61,15 @@ npm run format
 
 全局数据放到 globalStore 中，页面可以单独新建 store，优化页面和组件的通信方式，[详细介绍点击](https://github.com/Tencent/omi/tree/master/packages/omi-mp-create)
 
+```
+    // 监听子组件事件
+    this.store.emitter.on('plus', this.plus);
+    this.store.emitter.on('subtract', this.sub);
+    // 子组件
+    this.store.emitter.emit('plus', { a: 'b' });
+    this.store.emitter.emit('subtract', { a: 'b' });
+```
+
 #### 2.预加载数据
 
 在页面跳转的同时，请求即将到达页数据。参考 example 示例中的预加载
@@ -70,6 +79,8 @@ npm run format
 参照 example 中的预加载按钮
 
 #### 4.对小程序原生 api 做了 promise 封装
+
+#### 5. 组件的嵌套不能超过 3 层，2 层最佳。
 
 ## 注意
 
