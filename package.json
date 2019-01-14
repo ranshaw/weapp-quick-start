@@ -5,7 +5,8 @@
     "dev": "weapp-start dev",
     "build": "weapp-start build",
     "new": "weapp-start new",
-    "format": "prettier --write './src/**/*.{js,css,json}'"
+    "format": "prettier --write './src/**/*.{js,css,json}'",
+    "mock": "weapp-start mock"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.0",

@@ -46,7 +46,7 @@ npm run new
 开启 mock 服务
 
 ```javascript
-weapp-start mock
+npm run mock
 ```
 
 自动格式化代码

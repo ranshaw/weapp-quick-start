@@ -1,7 +1,6 @@
 <import src="./template/index.wxml" />
 <wxs src="./wxs/index.wxs" module="example" />
 <view class="container">
-
   <component-test>
     <view slot="title">
       <view class="title">父子组件交互</view>
@@ -13,34 +12,37 @@
         <input placeholder="请输入步数" auto-focus="auto-focus" value="{{inputValue}}" bindinput="inputChange" />
       </view>
       <blcok style="display:flex;">
-        <button-test text= '+'></button-test>
-        <button-test text= '-'></button-test>
+        <button-test text='+'></button-test>
+        <button-test text='-'></button-test>
       </blcok>
     </view>
   </component-test>
-
-  <template  is="test">
-
-  </template>
-
+  <template is="test"></template>
   <component-test>
-  <view class="title" slot="title">
-    预加载数据
-  </view>
-  <button slot="info" catchtap="toLogin">预加载</button>
+    <view class="title" slot="title">预加载数据</view>
+    <button slot="info" catchtap="toLogin">预加载</button>
   </component-test>
-
   <component-test>
-  <view class="title" slot="title">
-     WXS
-  </view>
-  <view slot="info">
+    <view class="title" slot="title">WXS</view>
+    <view slot="info">
       <view>WXS数据:{{example.foo}}</view>
       <view>WXS传入数据: {{example.bar('我是传入的')}}</view>
       <view wx:if="{{example.isShow(isShow)}}">判断是否显示</view>
-      <view> {{example.isShow(isShow)}} </view>
+      <view>{{example.isShow(isShow)}}</view>
       <button catchtap="isShowFn">是否显示</button>
-  </view>
+    </view>
   </component-test>
-
+  <component-test>
+    <view class="title" slot="title">预览图片</view>
+    <view slot="info">
+      <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{urls[0]}}"></image>
+      <button bind:tap="handlePreview">点击预览</button>
+    </view>
+  </component-test>
+  <component-test>
+    <view class="title" slot="title">倒计时</view>
+    <view slot="info">
+      <view style="font-size: 30rpx">{{days}}天{{hours}}时{{minutes}}分{{seconds}}秒</view>
+    </view>
+  </component-test>
 </view>

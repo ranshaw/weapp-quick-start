@@ -142,6 +142,67 @@ function throttle(fn, me, gapTime) {
     }
   };
 }
+function formatNumber(n) {
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+}
+// 倒计时
+function countdownTimer(name = 'timer') {
+  let { days, hours, minutes, seconds } = this.data;
+  if (!days || !hours || !minutes || !seconds) {
+    console.error('countdownTimer缺少必要的参数！');
+    return;
+  }
+  clearInterval(getApp()[name]);
+  getApp()[name] = setInterval(() => {
+    seconds--;
+    if (seconds < 0) {
+      seconds = 59;
+    }
+    this.setData({
+      seconds: formatNumber(seconds),
+    });
+    if (seconds === 59) {
+      minutes--;
+      if (minutes < 0) {
+        minutes = 59;
+      }
+      this.setData({
+        minutes: formatNumber(minutes),
+      });
+    }
+    if (minutes === 59 && seconds === 59) {
+      hours--;
+      if (hours < 0) {
+        hours = 23;
+      }
+      this.setData({
+        hours: formatNumber(hours),
+      });
+    }
+    if (hours === 23 && minutes === 59 && seconds === 59) {
+      days--;
+      if (days < 0) {
+        days = 0;
+      }
+      this.setData({
+        days: formatNumber(days),
+      });
+    }
+    if (
+      formatNumber(seconds) === '00' &&
+      formatNumber(minutes) === '00' &&
+      formatNumber(hours) === '00' &&
+      formatNumber(days) === '00'
+    ) {
+      clearInterval(getApp()[name]);
+      this.setData({
+        gameOver: true,
+      });
+    }
+    this.triggerEvent('saveCountDown', { days, hours, minutes, seconds });
+  }, 1000);
+}
 module.exports = {
   getCurrentTime,
   objLength,
@@ -154,4 +215,5 @@ module.exports = {
   convertStarArray,
   formatTime,
   throttle,
+  countdownTimer,
 };
