@@ -2,8 +2,9 @@ var foo = "'hello world' from comm.wxs";
 var bar = function (d) {
   return d;
 }
+console.log('执行wxs111')
 var isShow = function (param) {
-  console.log('执行wxs')
+  console.log('执行wxs222')
   return param
 }
 module.exports = {

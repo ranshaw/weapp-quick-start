@@ -42,7 +42,9 @@
   <component-test>
     <view class="title" slot="title">倒计时</view>
     <view slot="info">
+      <view>定时器应该放到一个组件当中</view>
       <view style="font-size: 30rpx">{{days}}天{{hours}}时{{minutes}}分{{seconds}}秒</view>
+      <timer days="{{days}}" hours="{{hours}}" minutes="{{minutes}}" seconds="{{seconds}}"></timer>
     </view>
   </component-test>
 </view>
