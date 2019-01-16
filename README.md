@@ -55,7 +55,7 @@ npm run mock
 npm run format
 ```
 
-## 优化
+## 开发
 
 #### 1.状态处理逻辑
 
@@ -84,10 +84,12 @@ npm run format
 
 #### 6. 利用 mock.js 模拟数据
 
+#### 7. 新增**weapp-plugin-require** 的 alias 配置项， 原  插件不支持，需单独下载，地址在下面
+
 ## 注意
 
 如果为 window 开发环境，需要修改依赖 weapp-plugin-require 中 lib 文件夹下的 index.js，
-在 118 行和 197 行后面添加如下代码
+在 118 行和 197 行后面添加如下代码，也可以直接下载此文件[weapp-plugin-require](https://github.com/ranshaw/weapp-start/tree/master/packages/weapp-plugin-require)
 
 ```javascript
 relativeDistPath = relativeDistPath.replace(/\\/g, '/');

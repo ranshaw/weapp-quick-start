@@ -37,8 +37,6 @@
   "dependencies": {
     "babel-eslint": "^8.2.6",
     "babel-runtime": "^6.26.0",
-    "lodash": "4.17.5",
-    "weappx": "^2.0.0",
-    "weappx-weapp": "^0.2.1"
+    "lodash": "4.17.5"
   }
 }

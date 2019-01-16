@@ -1,5 +1,5 @@
 /* global Component */
-import create from '../../../../utils/create';
+import create from '/utils/create';
 
 create.Component({
   // String Array	否	组件接受的外部样式类，参见 [外部样式类](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html)

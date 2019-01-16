@@ -1,7 +1,18 @@
+const path = require('path');
 module.exports = {
   plugins: [
     'weapp-plugin-babel',
-    'weapp-plugin-require',
+    [
+      'weapp-plugin-require',
+      {
+        alias: {
+          utils: path.resolve(__dirname, 'src/utils/'),
+          components: path.resolve(__dirname, 'src/components/'),
+          template: path.resolve(__dirname, 'src/template/'),
+          page: path.resolve(__dirname, 'src/page/'),
+        },
+      },
+    ],
     // 'weapp-plugin-less',
     // 'weapp-plugin-pug',
     'weapp-plugin-eslint',

@@ -2,9 +2,9 @@
 import { connectPage } from 'weappx-weapp';
 // import store from '../../models/example/store';
 import { navList } from './services/index';
-import { throttle } from '../../utils/util';
-import create from '../../utils/create';
-import store from '../../globalStore';
+import { throttle } from '/utils/util';
+import create from '/utils/create';
+import store from '/page/globalStore';
 import { countdownTimer } from '../../utils/util';
 
 create.Page({
