@@ -60,7 +60,7 @@ npm run format
 ```
 ├── README.md                 // 说明文档
 ├── dist                      // 编译后的代码，用小程序开发工具打开此文件夹
-├── mock.js                   // 模拟数据的文件
+├── mock.js                   // 模拟数据的文件
 ├── package-lock.json
 ├── package.json
 ├── project.config.json       // 项目配置文件
