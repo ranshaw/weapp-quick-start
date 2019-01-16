@@ -55,6 +55,52 @@ npm run mock
 npm run format
 ```
 
+## 目录结构
+
+```
+├── README.md                 // 说明文档
+├── dist                      // 编译后的代码，用小程序开发工具打开此文件夹
+├── mock.js                   // 模拟数据的文件
+├── package-lock.json
+├── package.json
+├── project.config.json       // 项目配置文件
+├── src                       // 项目代码都在这个文件夹下
+│   ├── app.js                // 等同于小程序根目录下的app.js
+│   ├── app.json              // 等同于小程序根目录下的app.json
+│   ├── app.wxss              // 等同于小程序根目录下的app.wxss
+│   ├── assets                // 项目中使用到的静态资源
+│   │   └── images
+│   │       ├── example
+│   │       └── tab
+│   ├── components            // 公用的组件
+│   ├── page                  // 存放小程序的各个页面文件
+│   │   ├── example           // example 页面
+│   │   │   ├── components    // example页面中的组件
+│   │   │   ├── index.js
+│   │   │   ├── index.json
+│   │   │   ├── index.wxml
+│   │   │   ├── index.wxss
+│   │   │   ├── services      // example页面中接口
+│   │   │   ├── template      // example页面中的模板
+│   │   │   └── wxs           // example页面中的wxs文件
+│   │   ├── globalStore.js    // 全局共享的数据
+│   │   └── test
+│   │       ├── index.js
+│   │       ├── index.json
+│   │       ├── index.wxml
+│   │       └── index.wxss
+│   ├── template              // 公用的模板
+│   └── utils                 // 公用的方法或工具
+│       ├── config.js         // 全局的一些配置信息
+│       ├── create.js         // 状态管理插件
+│       ├── mitt.js           // 状态管理插件
+│       ├── obaa.js           // 状态管理插件
+│       ├── util.js           // 公用方法
+│       ├── wxRequest.js      // 封装的小程序请求数据方法
+│       └── wxapi.js          // 对小程序api进行Promise封装
+└── weapp.config.js           // 对脚手架的配置文件
+```
+
 ## 开发
 
 #### 1.状态处理逻辑
