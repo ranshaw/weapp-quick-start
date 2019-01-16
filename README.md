@@ -84,7 +84,7 @@ npm run format
 
 #### 6. 利用 mock.js 模拟数据
 
-#### 7. 新增**weapp-plugin-require** 的 alias 配置项， 原  插件不支持，需单独下载，地址在下面
+#### 7. 新增**weapp-plugin-require** 的 alias 配置项，原插件不支持，需单独下载，地址在下面
 
 ## 注意
 
