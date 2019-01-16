@@ -83,7 +83,7 @@ npm run format
 │   │   │   ├── services      // example页面中接口
 │   │   │   ├── template      // example页面中的模板
 │   │   │   └── wxs           // example页面中的wxs文件
-│   │   ├── globalStore.js    // 全局共享的数据
+│   │   ├── globalStore.js    // 全局共享的数据
 │   │   └── test
 │   │       ├── index.js
 │   │       ├── index.json
@@ -96,7 +96,7 @@ npm run format
 │       ├── mitt.js           // 状态管理插件
 │       ├── obaa.js           // 状态管理插件
 │       ├── util.js           // 公用方法
-│       ├── wxRequest.js      // 封装的小程序请求数据方法
+│       ├── wxRequest.js      // 封装的小程序请求数据方法
 │       └── wxapi.js          // 对小程序api进行Promise封装
 └── weapp.config.js           // 对脚手架的配置文件
 ```
