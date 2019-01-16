@@ -86,6 +86,24 @@ npm run format
 
 #### 7. 新增**weapp-plugin-require** 的 alias 配置项，原插件不支持，需单独下载，地址在下面
 
+```
+    // 在weapp.config.js添加配置
+    [
+      'weapp-plugin-require',
+      {
+        alias: {
+          utils: path.resolve(__dirname, 'src/utils/'),
+          components: path.resolve(__dirname, 'src/components/'),
+          template: path.resolve(__dirname, 'src/template/'),
+          page: path.resolve(__dirname, 'src/page/'),
+        },
+      },
+    ]
+    // 在代码中引用
+    import create from '/utils/create';
+    import store from '/page/globalStore';
+```
+
 ## 注意
 
 如果为 window 开发环境，需要修改依赖 weapp-plugin-require 中 lib 文件夹下的 index.js，
