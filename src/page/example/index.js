@@ -1,12 +1,10 @@
 // import debounce from 'lodash/debounce';
-import { connectPage } from 'weappx-weapp';
 // import store from '../../models/example/store';
 import { navList } from './services/index';
 import { throttle } from '/utils/util';
 import create from '/utils/create';
 import store from '/page/globalStore';
 import { countdownTimer } from '../../utils/util';
-
 create.Page({
   store: {
     emitter: create.emitter,
@@ -33,7 +31,7 @@ create.Page({
   sub() {
     this.oData.count--;
   },
-  toLogin: throttle(function(e) {
+  toLogin: throttle(function (e) {
     console.log('app数据', getApp());
     getApp().preload = navList({
       grade: '1',

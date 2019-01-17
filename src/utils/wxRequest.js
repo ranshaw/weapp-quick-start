@@ -1,16 +1,21 @@
-import { constant } from './config';
+import { constant, env } from './config';
 import wxApi from './wxapi';
-// const env = 'prod'// uat
-const env = 'uat';
 
-const host = 'http://localhost:3000';
-// const host = 'http://192.168.1.32:9188'
+let host = '';
 
-// if (env === 'prd') {
-//   host = 'https://wxprogram.lybrc.com.cn/liwu/'
-// } else if (env === 'test') {
-//   host = 'https://wxprogram.lybrc.com.cn/liwu/'
-// }
+switch (env) {
+  case 'mock':
+    host = 'http://localhost:3000';
+    break;
+  case 'dev':
+    host = '';
+    break;
+  case 'prod':
+    host = '';
+    break;
+  default:
+    break;
+}
 
 exports.wxRequest = async (url, params = {}, scheme) => {
   // tip.loading()
