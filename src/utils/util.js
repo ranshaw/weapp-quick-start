@@ -203,6 +203,62 @@ function countdownTimer(name = 'timer') {
     this.triggerEvent('saveCountDown', { days, hours, minutes, seconds });
   }, 1000);
 }
+// 验证身份证号
+function idCardValidate(idCard) {
+  return /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|x)$)/i.test(idCard);
+}
+/**
+ * 计算两个时间相差的时间，格式为天，时分秒
+ *
+ * @param {String} diffTime 时间相差的毫秒数
+ * @param {*} start 开始时间
+ * @param {*} end   结束时间
+ * @returns
+ */
+function timeDiff(diffTime, start, end) {
+  // 需这种格式 "2017/08/28 04:56:38"
+  var dateBegin = new Date(start);
+  var dateEnd = new Date(end);
+  var dateDiff = dateEnd.getTime() - dateBegin.getTime();
+  if (diffTime) {
+    dateDiff = diffTime;
+  }
+  var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
+  var leave1 = dateDiff % (24 * 3600 * 1000);
+  var hours = Math.floor(leave1 / (3600 * 1000));
+
+  var leave2 = leave1 % (3600 * 1000);
+  var minutes = Math.floor(leave2 / (60 * 1000));
+
+  var leave3 = leave2 % (60 * 1000);
+  var seconds = Math.round(leave3 / 1000);
+  console.log(' 相差 ' + dayDiff + '天 ' + hours + '小时 ' + minutes + ' 分钟' + seconds + ' 秒');
+  return {
+    days: formatNumber(dayDiff),
+    hours: formatNumber(hours),
+    minutes: formatNumber(minutes),
+    seconds: formatNumber(seconds),
+  };
+}
+/**
+ * 将一维数组转为二维数组
+ *
+ * @param {Array} listData
+ * @param {Number} lineNum
+ * @returns
+ */
+function transformArr(listData, lineNum) {
+  let listArr = [];
+  let cloneList = [...listData];
+  for (let i = 0; i < Math.ceil(listData.length / lineNum); i++) {
+    let mergeArr = [];
+    cloneList.splice(0, lineNum).forEach(v => {
+      mergeArr = mergeArr.concat(v);
+    });
+    listArr.push(mergeArr);
+  }
+  return listArr;
+}
 module.exports = {
   getCurrentTime,
   objLength,
@@ -216,4 +272,7 @@ module.exports = {
   formatTime,
   throttle,
   countdownTimer,
+  timeDiff,
+  idCardValidate,
+  transformArr,
 };

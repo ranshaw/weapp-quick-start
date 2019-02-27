@@ -26,14 +26,10 @@ exports.wxRequest = async (url, params = {}, scheme) => {
   // })
   let res = await wxApi('request', {
     url: requestScheme(scheme, url),
-    // url: 'http://192.168.1.86:9177' + url,
     method: params.method || 'GET',
     data: data,
     header: {
       'Content-Type': 'application/json',
-      // token: wepy.$instance.globalData.token,
-      // token: await wepy.getStorage({ key: 'token' }).then(v => v.data),
-      // token: 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzM0NTIzMDgsImp0aSI6Imp3dCIsImlhdCI6MTUzMDg2MDMwOCwic3ViIjoie1xuICBcImxvZ2luSWRcIiA6IFwiMTAxNDA5ODIyMjIyNDg1NTA0MlwiLFxuICBcIm5hbWVcIiA6IFwiXCIsXG4gIFwib3BlbklkXCIgOiBcIm9DTFVHMFgwXy01Mk14SVQxMnJrUkdJMzcwWHNcIixcbiAgXCJzZXNzaW9uS2V5XCIgOiBcIm84RFRycFN3Zkp6RzJ2UEZTZzg0bEE9PVwiXG59In0.kHd2AFawUt4vpZjM4YoPBD4Ugt3JCUXeMko2aPc6aV4'
     },
   });
   // wx.hideLoading()
@@ -64,17 +60,10 @@ const filterResponse = res => {
   }
 
   if (code !== constant.codeSuccess) {
-    if (message.trim().length > 7) {
-      // wepy.showToast({
-      //   title: message,
-      //   icon: 'none',
-      // });
-    } else {
-      // wepy.showToast({
-      //   title: message,
-      //   image: '/assets/images/failicon.png',
-      // });
-    }
+    wx.showToast({
+      title: message,
+      icon: 'none',
+    });
   }
 
   return {
