@@ -55,10 +55,10 @@ function div(a, b) {
   let f = 0;
   try {
     e = a.toString().split('.')[1].length;
-  } catch (g) {}
+  } catch (g) { }
   try {
     f = b.toString().split('.')[1].length;
-  } catch (g) {}
+  } catch (g) { }
   return (
     (c = Number(a.toString().replace('.', ''))),
     (d = Number(b.toString().replace('.', ''))),
@@ -88,10 +88,10 @@ function mul(a, b) {
   var e = b.toString();
   try {
     c += d.split('.')[1].length;
-  } catch (f) {}
+  } catch (f) { }
   try {
     c += e.split('.')[1].length;
-  } catch (f) {}
+  } catch (f) { }
   return (Number(d.replace('.', '')) * Number(e.replace('.', ''))) / Math.pow(10, c);
 }
 
@@ -126,7 +126,14 @@ function convertStarArray(score) {
   }
   return arr;
 }
-// 函数节流
+/**
+ * 节流函数
+ *
+ * @param {Function} fn
+ * @param {Object} me
+ * @param {Number} gapTime
+ * @returns
+ */
 function throttle(fn, me, gapTime) {
   if (gapTime === null || gapTime === undefined) {
     gapTime = 2000;
@@ -134,7 +141,7 @@ function throttle(fn, me, gapTime) {
 
   let _lastTime = null;
 
-  return function() {
+  return function () {
     let _nowTime = +new Date();
     if (_nowTime - _lastTime > gapTime || !_lastTime) {
       fn.apply(this, arguments);
@@ -142,11 +149,18 @@ function throttle(fn, me, gapTime) {
     }
   };
 }
+
 function formatNumber(n) {
   n = n.toString();
   return n[1] ? n : '0' + n;
 }
-// 倒计时
+/**
+ * 天，时，分，秒，倒计时
+ * 在小程序页面中引入countdownTimer，
+ * countdownTimer.call(this, 'detailTimer')的方式调用
+ * @param {string} [name='timer']
+ * @returns
+ */
 function countdownTimer(name = 'timer') {
   let { days, hours, minutes, seconds } = this.data;
   if (!days || !hours || !minutes || !seconds) {
