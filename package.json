@@ -9,6 +9,7 @@
     "mock": "weapp-start mock"
   },
   "devDependencies": {
+    "@minapp/wx": "^2.2.1",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-plugin-add-module-exports": "^0.2.1",

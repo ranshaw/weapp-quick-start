@@ -1,3 +1,5 @@
+import '@minapp/wx';
+
 Page({
   data: {},
   async onLoad() {
