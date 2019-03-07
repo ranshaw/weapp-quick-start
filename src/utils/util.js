@@ -13,7 +13,7 @@ function getCurrentTime() {
   return keep;
 }
 
-function _formatNumber(n) {
+function formatNumber(n) {
   n = n.toString();
   return n[1] ? n : '0' + n;
 }
@@ -27,9 +27,9 @@ function formatTime(date) {
   const second = date.getSeconds();
 
   return (
-    [year, month, day].map(_formatNumber).join('/') +
+    [year, month, day].map(formatNumber).join('/') +
     ' ' +
-    [hour, minute, second].map(_formatNumber).join(':')
+    [hour, minute, second].map(formatNumber).join(':')
   );
 }
 
@@ -55,10 +55,10 @@ function div(a, b) {
   let f = 0;
   try {
     e = a.toString().split('.')[1].length;
-  } catch (g) { }
+  } catch (g) {}
   try {
     f = b.toString().split('.')[1].length;
-  } catch (g) { }
+  } catch (g) {}
   return (
     (c = Number(a.toString().replace('.', ''))),
     (d = Number(b.toString().replace('.', ''))),
@@ -88,10 +88,10 @@ function mul(a, b) {
   var e = b.toString();
   try {
     c += d.split('.')[1].length;
-  } catch (f) { }
+  } catch (f) {}
   try {
     c += e.split('.')[1].length;
-  } catch (f) { }
+  } catch (f) {}
   return (Number(d.replace('.', '')) * Number(e.replace('.', ''))) / Math.pow(10, c);
 }
 
@@ -141,7 +141,7 @@ function throttle(fn, me, gapTime) {
 
   let _lastTime = null;
 
-  return function () {
+  return function() {
     let _nowTime = +new Date();
     if (_nowTime - _lastTime > gapTime || !_lastTime) {
       fn.apply(this, arguments);
@@ -150,10 +150,6 @@ function throttle(fn, me, gapTime) {
   };
 }
 
-function formatNumber(n) {
-  n = n.toString();
-  return n[1] ? n : '0' + n;
-}
 /**
  * 天，时，分，秒，倒计时
  * 在小程序页面中引入countdownTimer，
