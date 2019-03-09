@@ -150,7 +150,15 @@ mock文件夹下只有后缀名为 .js 的文件会被选中，文件名称对�
     import create from '/utils/create';
     import store from '/page/globalStore';
 ```
-8. 在页面中引入 ```import '@minapp/wx'```，增加对小程序API的代码提示
+8. 在页面中引入 ```import '@minapp/wx'```，增加对小程序API的代码提示，【需要给@minapp添加package.json文件】
+
 ## 注意
 
 原weapp-plugin-require文件存在问题，使用项目中的weapp-plugin-require中lib文件夹index.js替换node_modules中weapp-plugin-require中的文件
+
+
+## 参考文档
+
+[状态管理](https://github.com/Tencent/omi/tree/master/packages/omi-mp-create)
+
+[vsCode代码提示](https://qiu8310.github.io/minapp/docs/doc-how-to-use-wxp-in-other-project.html)

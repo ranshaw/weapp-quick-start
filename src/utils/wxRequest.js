@@ -1,5 +1,6 @@
 import { constant, env } from './config';
 import wxApi from './wxapi';
+import { emitter } from './create';
 
 let host = '';
 
@@ -8,7 +9,7 @@ switch (env) {
     host = 'http://localhost:3000';
     break;
   case 'dev':
-    host = '';
+    host = 'http://118.31.37.206:9320';
     break;
   case 'prod':
     host = '';
@@ -18,34 +19,32 @@ switch (env) {
 }
 
 exports.wxRequest = async (url, params = {}, scheme) => {
-  // tip.loading()
   console.log('requst请求', JSON.stringify(params));
   let data = params.body || {};
-  // wx.showLoading({
-  //   title: '加载中...'
-  // })
+
+  emitter.emit('showLoading', true);
   let res = await wxApi('request', {
     url: requestScheme(scheme, url),
     method: params.method || 'GET',
     data: data,
     header: {
       'Content-Type': 'application/json',
+      token: wx.getStorageSync('token'),
     },
   });
-  // wx.hideLoading()
   console.log('返回结果request', res);
-
-  // tip.loaded()
+  emitter.emit('showLoading', false);
   return filterResponse(res);
 };
 
 const requestScheme = (scheme, url) => {
-  // if (scheme === 'order') {
-  //   return 'http://192.168.1.247:9188' + url
-  // }
+  if (scheme === 'mock') {
+    return 'http://localhost:3000' + url;
+  } else {
+    return host + url;
+  }
 
   // return host + scheme + '_' + env + url;
-  return host + url;
 };
 exports.requestScheme = requestScheme;
 
@@ -63,6 +62,12 @@ const filterResponse = res => {
     wx.showToast({
       title: message,
       icon: 'none',
+    });
+  }
+
+  if (code === 'S0001') {
+    wx.reLaunch({
+      url: '/page/loading/index',
     });
   }
 
