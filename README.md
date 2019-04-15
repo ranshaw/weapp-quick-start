@@ -129,7 +129,8 @@ npm run format
 #### 5. 组件的嵌套不能超过 3 层，2 层最佳。
 
 #### 6. 利用 mock.js 模拟数据
-mock文件夹下只有后缀名为 .js 的文件会被选中，文件名称对于接口没有影响，可以自由组织
+
+mock 文件夹下只有后缀名为 .js 的文件会被选中，文件名称对于接口没有影响，可以自由组织
 
 #### 7. 新增**weapp-plugin-require** 的 alias 配置项，原插件不支持，需单独下载，地址在下面
 
@@ -150,15 +151,15 @@ mock文件夹下只有后缀名为 .js 的文件会被选中，文件名称对�
     import create from '/utils/create';
     import store from '/page/globalStore';
 ```
-8. 在页面中引入 ```import '@minapp/wx'```，增加对小程序API的代码提示，【将根目录下的@minapp中的package.json添加到node_modules中的@minapp的根目录中】
+
+8. 在页面中引入 `import '@minapp/wx'`，增加对小程序 API 的代码提示，【将根目录下的@minapp 中的 package.json 添加到 node_modules 中的@minapp 的根目录中】
 
 ## 注意
 
-原weapp-plugin-require文件存在问题，使用项目中的weapp-plugin-require中lib文件夹index.js替换node_modules中weapp-plugin-require中的文件
-
+原 weapp-plugin-require 文件存在问题，使用项目中的 weapp-plugin-require 中 lib 文件夹 index.js 替换 node_modules 中 weapp-plugin-require 中的文件
 
 ## 参考文档
 
 [状态管理](https://github.com/Tencent/omi/tree/master/packages/omi-mp-create)
 
-[vsCode代码提示](https://qiu8310.github.io/minapp/docs/doc-how-to-use-wxp-in-other-project.html)
+[vsCode 代码提示](https://qiu8310.github.io/minapp/docs/doc-how-to-use-wxp-in-other-project.html)
