@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-expressions,yoda,eqeqeq,no-undef,no-sequences */
+
 !(function(n, e) {
   'object' == typeof exports && 'undefined' != typeof module
     ? (module.exports = e())
     : 'function' == typeof define && define.amd
-      ? define(e)
-      : (n.mitt = e());
+    ? define(e)
+    : (n.mitt = e());
 })(this, function() {
   function n(n) {
     return (

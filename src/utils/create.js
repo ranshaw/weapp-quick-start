@@ -2,7 +2,8 @@
  *  omi-mp-create v1.0.0 by dntzhang
  *  Github: https://github.com/Tencent/omi
  *  MIT Licensed.
-*/
+ */
+/* eslint-disable no-undef,no-useless-call */
 
 import obaa from './obaa';
 import mitt from './mitt';

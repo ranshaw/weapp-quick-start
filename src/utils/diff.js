@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 const ARRAYTYPE = '[object Array]';
 const OBJECTTYPE = '[object Object]';
 const FUNCTIONTYPE = '[object Function]';

@@ -3,6 +3,11 @@
  * Github: https://github.com/Tencent/omi
  * MIT Licensed.
  */
+/* eslint-disable no-undef */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-extend-native */
+/* eslint-disable no-new-func */
+
 (function(win) {
   var obaa = function(target, arr, callback) {
     var _observe = function(target, arr, callback) {
