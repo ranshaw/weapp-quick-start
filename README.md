@@ -150,7 +150,7 @@ mock文件夹下只有后缀名为 .js 的文件会被选中，文件名称对�
     import create from '/utils/create';
     import store from '/page/globalStore';
 ```
-8. 在页面中引入 ```import '@minapp/wx'```，增加对小程序API的代码提示，【需要给@minapp添加package.json文件】
+8. 在页面中引入 ```import '@minapp/wx'```，增加对小程序API的代码提示，【将根目录下的@minapp中的package.json添加到node_modules中的@minapp的根目录中】
 
 ## 注意
 
