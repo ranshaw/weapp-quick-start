@@ -19,6 +19,25 @@ create.Page({
     hours: '00',
     minutes: '11',
     seconds: '00',
+    isShowPickerView: false,
+    pickerViewData: {
+      mode: 'selector',
+      pickerValue: [0],
+      pickerValueSingleArray: [
+        {
+          id: '1',
+          name: '测试1',
+        },
+        {
+          id: '2',
+          name: '测试2',
+        },
+        {
+          id: '3',
+          name: '测试3',
+        },
+      ],
+    },
   },
   inputChange({ detail: { value } }) {
     console.log(value);
@@ -54,6 +73,9 @@ create.Page({
     // 监听子组件事件
     this.store.emitter.on('plus', this.plus);
     this.store.emitter.on('subtract', this.sub);
+    this.store.emitter.on('hidePackerView', this.hidePackerView);
+    this.store.emitter.on('getChooseValue', this.getChooseValue);
+
     // 倒计时
     // this.countdownTimer();
   },
@@ -67,5 +89,18 @@ create.Page({
   },
   countdownTimer() {
     countdownTimer.call(this);
+  },
+  hidePackerView() {
+    this.oData.isShowPickerView = false;
+  },
+  showPickerView() {
+    this.oData.isShowPickerView = true;
+  },
+  getChooseValue(e) {
+    console.log('选中的值---', e);
+    this.hidePackerView();
+    this.setData({
+      'pickerViewData.pickerValue': e || [0],
+    });
   },
 });

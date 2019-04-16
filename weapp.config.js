@@ -13,7 +13,7 @@ module.exports = {
         },
       },
     ],
-    // 'weapp-plugin-less',
+    'weapp-plugin-less',
     // 'weapp-plugin-pug',
     'weapp-plugin-eslint',
   ],

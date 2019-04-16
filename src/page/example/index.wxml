@@ -47,4 +47,15 @@
       <timer days="{{days}}" hours="{{hours}}" minutes="{{minutes}}" seconds="{{seconds}}"></timer>
     </view>
   </component-test>
+  <component-test>
+    <view class="title" slot="title">PickerView</view>
+    <view slot="info">
+      <button bind:tap="showPickerView">显示pickerView</button>
+    </view>
+  </component-test>
+  <pickerView
+  mode="{{pickerViewData.mode}}"
+  pickerValue="{{pickerViewData.pickerValue}}"
+  pickerValueSingleArray="{{pickerViewData.pickerValueSingleArray}}"
+  wx:if="{{isShowPickerView}}"></pickerView>
 </view>

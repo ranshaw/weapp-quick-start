@@ -3,6 +3,7 @@
   "usingComponents": {
     "component-test": "./components/example/index",
     "button-test": "./components/button/index",
-    "timer": "./components/timer/index"
+    "timer": "./components/timer/index",
+    "pickerView": "../../components/pickerView/index"
   }
 }

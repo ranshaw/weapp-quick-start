@@ -1,0 +1,239 @@
+<view class="mpvue-picker">
+  <view catch:tap="hidePicker" class="{{ isShow ? 'pickerMask' : '' }} "></view>
+  <view class="  mpvue-picker-content {{ isShow ? 'mpvue-picker-view-show' : '' }}   ">
+    <view class="  mpvue-picker__hd" catchtouchmove="false">
+      <view class="  mpvue-picker__action" catch:tap="hidePicker">取消</view>
+      <view class="mpvue-picker__action" catch:tap="confirm">确定</view>
+    </view>
+    <picker-view
+      indicator-style="height: 40px;"
+      class="_picker-view  mpvue-picker-view"
+      value="{{ pickerValue }}"
+      bindchange="pickerChange"
+      wx:if="{{ mode === 'selector' && pickerValueSingleArray.length > 0 }}"
+      data-eventid="{{ '3' }}"
+      data-comkey="{{ $k }}"
+      bindpickstart="pickerViewStart"
+      bindpickend="pickerViewEnd"
+    >
+      <block>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="_view data-v-be8b45aa picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueSingleArray }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.value || item.name }}</view
+          >
+        </picker-view-column>
+      </block>
+    </picker-view>
+
+    <view
+      wx:if="{{ mode === 'multiple' && multipleList.length > 0 }}"
+      class="_picker-view  mpvue-picker-view"
+    >
+      <scroll-view scroll-y style="height: 100%;">
+        <view class="multiple">
+          <block wx:for="{{ multipleList }}" wx:key="index">
+            <view data-index="{{ index }}" bind:tap="handleItem" class="con">
+              <view>{{ item.value }}</view>
+              <image wx:if="{{ item.isShow }}" src="/assets/images/wximgs/selected.png"></image>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- <picker-view
+      indicator-style="height: 40px;"
+      class="_picker-view  mpvue-picker-view"
+      value="{{ pickerValue }}"
+      bindchange="handleProxy"
+      wx:if="{{ mode === 'dateSelector' }}"
+      data-eventid="{{ '4' }}"
+      data-comkey="{{ $k }}"
+    >
+      <block>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueYear }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueMonth }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueDay }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+      </block>
+    </picker-view>
+
+    <picker-view
+      indicator-style="height: 40px;"
+      class="_picker-view  mpvue-picker-view"
+      value="{{ pickerValue }}"
+      bindchange="handleProxy"
+      wx:if="{{ mode === 'timeSelector' }}"
+      data-eventid="{{ '5' }}"
+      data-comkey="{{ $k }}"
+    >
+      <block>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueHour }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueMinute }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+      </block>
+    </picker-view>
+    <picker-view
+      indicator-style="height: 40px;"
+      class="_picker-view  mpvue-picker-view"
+      value="{{ pickerValue }}"
+      bindchange="handleProxy"
+      wx:if="{{ mode === 'multiSelector' }}"
+      data-eventid="{{ '6' }}"
+      data-comkey="{{ $k }}"
+    >
+      <block
+        wx:key="index"
+        key="{{ index }}"
+        wx:for="{{ pickerValueMulArray.length }}"
+        wx:for-index="index"
+        wx:for-item="n"
+      >
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index1"
+            key="{{ index1 }}"
+            wx:for="{{ pickerValueMulArray[n] }}"
+            wx:for-index="index1"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+      </block>
+    </picker-view>
+    <picker-view
+      indicator-style="height: 40px;"
+      class="_picker-view  mpvue-picker-view"
+      value="{{ pickerValue }}"
+      bindchange="handleProxy"
+      wx:if="{{ mode === 'multiLinkageSelector' && deepLength === 2 }}"
+      data-eventid="{{ '7' }}"
+      data-comkey="{{ $k }}"
+    >
+      <block>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueMulTwoOne }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueMulTwoTwo }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+      </block>
+    </picker-view>
+    <picker-view
+      indicator-style="height: 40px;"
+      class="_picker-view  mpvue-picker-view"
+      value="{{ pickerValue }}"
+      bindchange="handleProxy"
+      wx:if="{{ mode === 'multiLinkageSelector' && deepLength === 3 }}"
+      data-eventid="{{ '8' }}"
+      data-comkey="{{ $k }}"
+    >
+      <block>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueMulThreeOne }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueMulThreeTwo }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+        <picker-view-column class="_picker-view-column ">
+          <view
+            class="  picker-item"
+            wx:key="index"
+            key="{{ index }}"
+            wx:for="{{ pickerValueMulThreeThree }}"
+            wx:for-index="index"
+            wx:for-item="item"
+            >{{ item.label }}</view
+          >
+        </picker-view-column>
+      </block>
+    </picker-view> -->
+  </view>
+</view>
