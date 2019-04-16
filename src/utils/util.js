@@ -172,7 +172,7 @@ function countdownTimer(name = 'timer') {
     this.setData({
       seconds: formatNumber(seconds),
     });
-    if (seconds === 59) {
+    if (seconds === 59 && formatNumber(minutes) !== '00') {
       minutes--;
       if (minutes < 0) {
         minutes = 59;
@@ -181,7 +181,7 @@ function countdownTimer(name = 'timer') {
         minutes: formatNumber(minutes),
       });
     }
-    if (minutes === 59 && seconds === 59) {
+    if (minutes === 59 && seconds === 59 && formatNumber(hours) !== '00') {
       hours--;
       if (hours < 0) {
         hours = 23;
@@ -190,7 +190,7 @@ function countdownTimer(name = 'timer') {
         hours: formatNumber(hours),
       });
     }
-    if (hours === 23 && minutes === 59 && seconds === 59) {
+    if (hours === 23 && minutes === 59 && seconds === 59 && formatNumber(days) !== '00') {
       days--;
       if (days < 0) {
         days = 0;
