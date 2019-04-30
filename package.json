@@ -32,7 +32,7 @@
     "weapp-plugin-less": "^0.3.5",
     "weapp-plugin-postcss": "^0.1.3",
     "weapp-plugin-pug": "^0.2.5",
-    "weapp-plugin-require": "^0.3.6",
+    "weapp-plugin-require": "https://github.com/ranshaw/weapp-plugin-require.git",
     "weapp-plugin-stylus": "^0.3.5"
   },
   "dependencies": {
