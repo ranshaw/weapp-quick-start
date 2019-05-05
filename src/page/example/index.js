@@ -1,11 +1,10 @@
 // import debounce from 'lodash/debounce';
 // import store from '../../models/example/store';
 import { navList } from './services/index';
-import { throttle } from '/utils/util';
+import { throttle, countdownTimer } from '/utils/util';
 import create from '/utils/create';
 // import store from '/page/globalStore';
-import { countdownTimer } from '../../utils/util';
-import '@minapp/wx';
+import 'minapp';
 create.Page({
   store: {
     emitter: create.emitter,

@@ -1,4 +1,4 @@
-import '@minapp/wx';
+import 'minapp';
 
 Page({
   data: {},
