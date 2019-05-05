@@ -154,10 +154,6 @@ mock 文件夹下只有后缀名为 .js 的文件会被选中，文件名称对�
 
 8. 在页面中引入 `import '@minapp/wx'`，增加对小程序 API 的代码提示，【将根目录下的@minapp 中的 package.json 添加到 node_modules 中的@minapp 的根目录中】
 
-## 注意
-
-原 weapp-plugin-require 文件存在问题，使用项目中的 weapp-plugin-require 中 lib 文件夹 index.js 替换 node_modules 中 weapp-plugin-require 中的文件
-
 ## 参考文档
 
 [状态管理](https://github.com/Tencent/omi/tree/master/packages/omi-mp-create)
