@@ -1,3 +1,5 @@
+import 'minapp';
+console.log('env--', env);
 App({
   data: {
     preload: null,

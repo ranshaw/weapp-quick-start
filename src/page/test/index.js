@@ -1,5 +1,3 @@
-import 'minapp';
-
 Page({
   data: {},
   async onLoad() {
