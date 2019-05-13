@@ -105,7 +105,7 @@ npm run format
 
 #### 1.状态处理逻辑
 
-全局数据放到 globalStore 中，页面可以单独新建 store，优化页面和组件的通信方式，[详细介绍点击](https://github.com/Tencent/omi/tree/master/packages/omi-mp-create)
+全局数据放到 globalStore 中，页面可以单独新建 store，优化页面和组件的通信方式，[详细介绍点击](https://github.com/ranshaw/omi-mp-create-demo)
 
 ```
     // 监听子组件事件
