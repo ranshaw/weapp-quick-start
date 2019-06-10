@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "update": "npm i weapp-plugin-babel@latest weapp-plugin-eslint@latest weapp-plugin-less@latest weapp-plugin-pug@latest weapp-plugin-require@latest weapp-plugin-stylus@latest weapp-plugin-filter@latest weapp-plugin-jsmin@latest weapp-plugin-filemin@latest weapp-plugin-imgmin@latest weapp-plugin-postcss@latest -D",
-    "dev": "weapp-start dev",
+    "start": "weapp-start dev",
     "build": "weapp-start build",
     "new": "weapp-start new",
     "format": "prettier --write './src/**/*.{js,css,json}'",

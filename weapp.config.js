@@ -18,6 +18,7 @@ module.exports = {
     'weapp-plugin-eslint',
   ],
   env: {
+    development: {},
     production: {
       plugins: [
         [

@@ -58,4 +58,5 @@
   pickerValue="{{pickerViewData.pickerValue}}"
   pickerValueSingleArray="{{pickerViewData.pickerValueSingleArray}}"
   wx:if="{{isShowPickerView}}"></pickerView>
+
 </view>

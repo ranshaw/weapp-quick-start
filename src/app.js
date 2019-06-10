@@ -1,5 +1,5 @@
 import 'minapp';
-console.log('env--', env);
+console.log('env--', process.env.NODE_ENV);
 App({
   data: {
     preload: null,

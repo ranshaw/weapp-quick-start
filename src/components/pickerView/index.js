@@ -58,6 +58,7 @@ create.Component({
             console.log('11111111');
             this.isConfirm = false;
             this.store.emitter.emit('getChooseValue', this.current);
+
             clearInterval(this.timer);
           }
         }, 10);
