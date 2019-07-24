@@ -58,5 +58,10 @@
   pickerValue="{{pickerViewData.pickerValue}}"
   pickerValueSingleArray="{{pickerViewData.pickerValueSingleArray}}"
   wx:if="{{isShowPickerView}}"></pickerView>
-
+  <component-test>
+    <view class="title" slot="title">PickerView</view>
+    <view slot="info">
+      <button bind:tap="handleDrawImg">绘制分享页面</button>
+    </view>
+  </component-test>
 </view>

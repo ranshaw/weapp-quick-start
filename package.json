@@ -2,11 +2,19 @@
   "private": true,
   "scripts": {
     "update": "npm i weapp-plugin-babel@latest weapp-plugin-eslint@latest weapp-plugin-less@latest weapp-plugin-pug@latest weapp-plugin-require@latest weapp-plugin-stylus@latest weapp-plugin-filter@latest weapp-plugin-jsmin@latest weapp-plugin-filemin@latest weapp-plugin-imgmin@latest weapp-plugin-postcss@latest -D",
-    "start": "weapp-start dev",
+    "start": "yarn patch:cli && NODE_ENV=development weapp-start dev",
+    "dev": "weapp-start dev",
     "build": "weapp-start build",
     "new": "weapp-start new",
     "format": "prettier --write './src/**/*.{js,css,json}'",
-    "mock": "weapp-start mock"
+    "mock": "weapp-start mock",
+    "start:development": "yarn patch:cli && NODE_ENV=development weapp-start dev",
+    "start:staging": "yarn patch:cli && NODE_ENV=staging weapp-start dev",
+    "start:production": "yarn patch:cli && NODE_ENV=production weapp-start dev",
+    "build:development": "yarn patch:cli && NODE_ENV=development weapp-start build",
+    "build:staging": "yarn patch:cli && NODE_ENV=staging weapp-start build",
+    "build:production": "yarn patch:cli && NODE_ENV=production weapp-start build",
+    "patch:cli": "cd scripts && bash ./patch-cli.sh && cd -"
   },
   "devDependencies": {
     "minapp": "https://github.com/ranshaw/minapp.git",
@@ -33,7 +41,8 @@
     "weapp-plugin-postcss": "^0.1.3",
     "weapp-plugin-pug": "^0.2.5",
     "weapp-plugin-require": "https://github.com/ranshaw/weapp-plugin-require.git",
-    "weapp-plugin-stylus": "^0.3.5"
+    "weapp-plugin-stylus": "^0.3.5",
+    "weapp-start": "^1.4.2"
   },
   "dependencies": {
     "babel-eslint": "^8.2.6",

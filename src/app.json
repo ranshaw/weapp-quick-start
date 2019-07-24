@@ -1,5 +1,5 @@
 {
-  "pages": ["page/example/index", "page/test/index"],
+  "pages": ["page/example/index", "page/test/index", "page/drawImg/index"],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "",

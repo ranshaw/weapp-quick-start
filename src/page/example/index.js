@@ -4,6 +4,8 @@ import { navList } from './services/index';
 import { throttle, countdownTimer } from '/utils/util';
 import create from '/utils/create';
 // import store from '/page/globalStore';
+import 'minapp';
+
 create.Page({
   store: {
     emitter: create.emitter,
@@ -99,6 +101,11 @@ create.Page({
     this.hidePackerView();
     this.setData({
       'pickerViewData.pickerValue': e || [0],
+    });
+  },
+  handleDrawImg() {
+    wx.navigateTo({
+      url: '/page/drawImg/index',
     });
   },
 });
