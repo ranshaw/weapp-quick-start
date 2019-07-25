@@ -1,1 +1,4 @@
-<view></view>
+<view>
+  <canvas style="width: 100%;height: 877rpx;" canvas-id="myCanvas" />
+  <button bind:tap="handleStartDraw">开始绘制</button>
+</view>

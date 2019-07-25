@@ -1,5 +1,5 @@
 module.exports = {
-  env: process.env.NODE_ENV, // 1. mock 采用模拟数据 2. dev 测试环境 3. prod 生产环境
+  env: '', // 1. mock 采用模拟数据 2. dev 测试环境 3. prod 生产环境
   constant: {
     codeSuccess: 'S000000',
     imgUrl: 'http://brcshop-pic.oss-cn-shanghai.aliyuncs.com/wx-gift/',
