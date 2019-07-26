@@ -152,10 +152,11 @@ mock 文件夹下只有后缀名为 .js 的文件会被选中，文件名称对�
     import store from '/page/globalStore';
 ```
 
-8. 在页面中引入 `import 'minapp'`，增加对小程序 API 的代码提示，
+#### 8. 在页面中引入 `import 'minapp'`，增加对小程序 API 的代码提示，
 
-9. 新增生成模板配置，新建文件夹的时候，自动生成根据模板配置的文件，vscode 需要安装插件 dot-template 插件，
-   详细使用教程查看[使用教程](https://github.com/qiu8310/dot-template/blob/master/ARTICLE_ABOUT_IT.md)
+#### 9. 新增生成模板配置，新建文件夹的时候，自动生成根据模板配置的文件，vscode 需要安装插件 dot-template 插件，
+
+详细使用教程查看[使用教程](https://github.com/qiu8310/dot-template/blob/master/ARTICLE_ABOUT_IT.md)
 
 ## 参考文档
 
