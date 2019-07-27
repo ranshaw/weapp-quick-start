@@ -1,8 +1,3 @@
-/*
-  此文件是由模板文件 ".dtpl/component/${ref.dollar}rawModuleName.cjson.dtpl" 生成的，你可以自行修改模板
-
-
-*/
 
 {
   "component": true

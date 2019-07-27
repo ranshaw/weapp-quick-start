@@ -1,0 +1,21 @@
+<!-- index.wxml -->
+<view class="index">
+  <view class="index-hd">
+    <image class="index-logo" src="https://ranshaw.oss-cn-shanghai.aliyuncs.com/example/components.png"></image>
+    <view class="index-desc">小程序常用组件示例</view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd">
+            <navigator url="/page/{{item.id}}/{{item.sub}}" class="navigator" hover-class="none">
+              <view class="kind-list-text">{{item.name}}</view>
+              <image class="kind-list-img" src="{{item.url}}"></image>
+            </navigator>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
