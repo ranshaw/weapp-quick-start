@@ -17,7 +17,6 @@
     "patch:cli": "cd scripts && bash ./patch-cli.sh && cd -"
   },
   "devDependencies": {
-    "minapp": "https://github.com/ranshaw/minapp.git",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -30,6 +29,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^2.0.1",
+    "minapp": "https://github.com/ranshaw/minapp.git",
     "prettier": "^1.12.1",
     "weapp-plugin-babel": "^0.2.6",
     "weapp-plugin-eslint": "^0.2.5",
@@ -40,13 +40,15 @@
     "weapp-plugin-less": "^0.3.5",
     "weapp-plugin-postcss": "^0.1.3",
     "weapp-plugin-pug": "^0.2.5",
-    "weapp-plugin-require": "https://github.com/ranshaw/weapp-plugin-require.git",
+    "weapp-plugin-require-enhance": "0.0.3",
     "weapp-plugin-stylus": "^0.3.5",
     "weapp-start": "^1.4.2"
   },
   "dependencies": {
     "babel-eslint": "^8.2.6",
     "babel-runtime": "^6.26.0",
-    "lodash": "4.17.5"
+    "lodash": "4.17.5",
+    "vant-weapp": "^0.5.17",
+    "weapp-util-create-plugin": "^0.1.5"
   }
 }

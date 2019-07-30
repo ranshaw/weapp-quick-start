@@ -3,7 +3,7 @@ module.exports = {
   plugins: [
     'weapp-plugin-babel',
     [
-      'weapp-plugin-require',
+      'weapp-plugin-require-enhance',
       {
         alias: {
           utils: path.resolve(__dirname, 'src/utils/'),
