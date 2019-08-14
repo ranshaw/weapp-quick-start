@@ -42,5 +42,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
+  "usingComponents": {},
   "debug": false
 }

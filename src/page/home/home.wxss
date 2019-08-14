@@ -1,3 +1,4 @@
+@import '../../var.less';
 page {
   background: #fbf9fe;
 }
@@ -22,7 +23,7 @@ page {
 }
 .index-desc {
   margin-top: 20rpx;
-  color: #888888;
+  color: @gray-dark;
   font-size: 28rpx;
 }
 

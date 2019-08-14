@@ -19,3 +19,12 @@
     </view>
   </view>
 </view>
+<PopUp
+  show
+  position="bottom"
+  custom-class="bottom"
+  bind:close="toggleBottomPopup"
+  bind:transitionEnd="onTransitionEnd"
+  >
+  <view>women</view>
+</PopUp>
