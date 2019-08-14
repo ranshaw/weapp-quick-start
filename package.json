@@ -42,7 +42,8 @@
     "weapp-plugin-pug": "^0.2.5",
     "weapp-plugin-require-enhance": "0.0.3",
     "weapp-plugin-stylus": "^0.3.5",
-    "weapp-start": "^1.4.2"
+    "weapp-start": "^1.4.2",
+    "weapp-plugin-copy": "^0.1.1"
   },
   "dependencies": {
     "babel-eslint": "^8.2.6",

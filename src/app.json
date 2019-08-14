@@ -4,13 +4,13 @@
     "page/example/index",
     "page/test/index",
     "page/drawImg/index",
-    "page/wheel/wheel",
-    "page/scratch/scratch",
-    "page/slotMachine/slotMachine",
-    "page/fruitMachine/fruitMachine",
-    "page/gridcard/gridcard",
-    "page/shake/shake",
-    "page/gestureLock/gestureLock"
+    "page/market/wheel/wheel",
+    "page/market/scratch/scratch",
+    "page/market/slotMachine/slotMachine",
+    "page/market/fruitMachine/fruitMachine",
+    "page/market/gridcard/gridcard",
+    "page/market/shake/shake",
+    "page/market/gestureLock/gestureLock"
   ],
   "window": {
     "navigationBarTextStyle": "white",

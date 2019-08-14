@@ -1,0 +1,8 @@
+{
+  "pkgData": [
+    {
+      "source": "node_modules/vant-weapp/lib/",
+      "targetFileName": "dist/npm/vant"
+    }
+  ]
+}

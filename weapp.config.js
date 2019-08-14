@@ -16,6 +16,7 @@ module.exports = {
     'weapp-plugin-less',
     // 'weapp-plugin-pug',
     'weapp-plugin-eslint',
+    'weapp-plugin-copy',
   ],
   env: {
     development: {},

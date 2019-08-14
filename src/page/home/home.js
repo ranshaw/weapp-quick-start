@@ -11,15 +11,15 @@ create.Page({
   data: {
     list: [
       {
-        id: 'market',
+        id: 'marketIndex',
         sub: 'market',
         name: '营销组件',
         url: 'https://ranshaw.oss-cn-shanghai.aliyuncs.com/example/market.png',
       },
       {
-        id: 'PopUp',
-        sub: 'PopUp',
-        name: 'Popup 弹出层',
+        id: 'UIExp',
+        sub: 'UIExp',
+        name: '常用UI组件',
         url: 'https://ranshaw.oss-cn-shanghai.aliyuncs.com/example/pop-code.png',
       },
     ],
