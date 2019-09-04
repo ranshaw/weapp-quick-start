@@ -17,7 +17,7 @@
  *  })
  */
 class Wheel {
-    /**
+  /**
    * @constructs Wheel构造函数
    * @param  {Object} pageContext page路由指针
    * @param  {Object} opts      组件所需参数
@@ -27,85 +27,83 @@ class Wheel {
    * @param  {Number} opts.mode     1是指针旋转，2为转盘旋转
    * @param  {Function} opts.callback    结束回调
    */
-    constructor (pageContext, opts) {
-        this.page = pageContext
-        this.deg = 0
-        this.areaNumber = opts.areaNumber // 奖区数量
-        this.speed = opts.speed || 16 // 每帧速度
-        this.awardNumer = opts.awardNumer // 中奖区域 从1开始
-        this.mode = opts.mode || 2
-        this.singleAngle = '' // 每片扇形的角度
-        this.isStart = false
-        this.endCallBack = opts.callback
+  constructor(pageContext, opts) {
+    this.page = pageContext;
+    this.deg = 0;
+    this.areaNumber = opts.areaNumber; // 奖区数量
+    this.speed = opts.speed || 16; // 每帧速度
+    this.awardNumer = opts.awardNumer; // 中奖区域 从1开始
+    this.mode = opts.mode || 2;
+    this.singleAngle = ''; // 每片扇形的角度
+    this.isStart = false;
+    this.endCallBack = opts.callback;
 
+    this.init();
 
-        this.init()
+    this.page.start = this.start.bind(this);
+  }
 
-        this.page.start = this.start.bind(this)
-    }
+  init() {
+    let { areaNumber, singleAngle, mode } = this;
+    singleAngle = 360 / areaNumber;
+    this.singleAngle = singleAngle;
+    this.page.setData({
+      wheel: {
+        singleAngle,
+        mode,
+      },
+    });
+  }
 
-    init () {
-        let { areaNumber, singleAngle, mode } = this
-        singleAngle = 360 / areaNumber
-        this.singleAngle = singleAngle
-        this.page.setData({
-            wheel: {
-                singleAngle,
-                mode
-            }
-        })
-    }
+  start() {
+    let { deg, awardNumer, singleAngle, speed, isStart, mode } = this;
+    if (isStart) return;
+    this.isStart = true;
+    const endAddAngle = (awardNumer - 1) * singleAngle + singleAngle / 2 + 360; // 中奖角度
+    const rangeAngle = (Math.floor(Math.random() * 4) + 4) * 360; // 随机旋转几圈再停止
+    let cAngle;
+    deg = 0;
+    this.timer = setInterval(() => {
+      if (deg < rangeAngle) {
+        deg += speed;
+      } else {
+        cAngle = (endAddAngle + rangeAngle - deg) / speed;
+        cAngle = cAngle > speed ? speed : cAngle < 1 ? 1 : cAngle;
+        deg += cAngle;
 
-    start () {
-        let { deg, awardNumer, singleAngle, speed, isStart, mode } = this
-        if (isStart) return
-        this.isStart = true
-        const endAddAngle = (awardNumer - 1) * singleAngle + singleAngle / 2 + 360 // 中奖角度
-        const rangeAngle = (Math.floor(Math.random() * 4) + 4) * 360 // 随机旋转几圈再停止
-        let cAngle
-        deg = 0
-        this.timer = setInterval(() => {
-            if (deg < rangeAngle) {
-                deg += speed
-            } else {
-                cAngle = (endAddAngle + rangeAngle - deg) / speed
-                cAngle = cAngle > speed ? speed : cAngle < 1 ? 1 : cAngle
-                deg += cAngle
+        if (deg >= endAddAngle + rangeAngle) {
+          deg = endAddAngle + rangeAngle;
+          this.isStart = false;
+          clearInterval(this.timer);
+          this.endCallBack();
+        }
+      }
 
-                if (deg >= (endAddAngle + rangeAngle)) {
-                    deg = endAddAngle + rangeAngle
-                    this.isStart = false
-                    clearInterval(this.timer)
-                    this.endCallBack()
-                }
-            }
+      this.page.setData({
+        wheel: {
+          singleAngle,
+          deg,
+          mode,
+        },
+      });
+    }, 1000 / 60);
+  }
 
-            this.page.setData({
-                wheel: {
-                    singleAngle,
-                    deg,
-                    mode
-                }
-            })
-        }, 1000 / 60)
-    }
+  reset() {
+    const { mode } = this;
+    this.deg = 0;
+    this.page.setData({
+      wheel: {
+        singleAngle: this.singleAngle,
+        deg: 0,
+        mode,
+      },
+    });
+  }
 
-    reset () {
-        const { mode } = this
-        this.deg = 0
-        this.page.setData({
-            wheel: {
-                singleAngle: this.singleAngle,
-                deg: 0,
-                mode
-            }
-        })
-    }
-
-    switch (mode) {
-        this.mode = mode
-    }
+  switch(mode) {
+    this.mode = mode;
+  }
 }
 
-export default Wheel
-
+export default Wheel;

@@ -1,5 +1,4 @@
 .panel {
-  width: 100%;
   margin-top: 20rpx;
   text-align: left;
   font-size: 12px;

@@ -1,30 +1,5 @@
-.panel {
-  width: 100%;
-  margin-top: 20rpx;
-  text-align: left;
-  font-size: 12px;
-  padding-top: 20rpx;
-  padding-left: 50rpx;
-  padding-bottom: 20rpx;
-  padding-right: 50rpx;
-  border: 1px solid #ccc;
-}
-
-.title {
-  padding-bottom: 20rpx;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.info {
-  padding: 15rpx;
-}
-
-.testcounter {
-  margin-top: 15rpx;
-  position: absolute;
-}
-
-.counterview {
-  margin-left: 120rpx;
+button {
+  min-width: 100rpx;
+  min-height: 60rpx;
+  line-height: 60rpx;
 }

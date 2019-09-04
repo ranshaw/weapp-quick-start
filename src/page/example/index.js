@@ -111,6 +111,6 @@ create.Page({
   },
   handleDrawQrcode() {
     canvas.barcode('barcode', this.data.code, 680, 200);
-    canvas.qrcode('qrcode', this.data.code, 420, 420);
+    canvas.qrcode('qrcode', this.data.code, 300, 300);
   },
 });

@@ -60,7 +60,7 @@ export function code128(ctx, text, width, height) {
   }
 
   ctx.draw();
-};
+}
 
 function stringToCode128(text) {
   const barc = {
@@ -234,38 +234,38 @@ function codeSetAllowedFor(chr) {
 }
 
 class Graphics {
-  constructor (ctx, width, height) {
+  constructor(ctx, width, height) {
     this.width = width;
     this.height = height;
     this.quiet = Math.round(this.width / 40);
-  
+
     this.border_size = 0;
     this.padding_width = 0;
-  
+
     this.area = {
       width: width - this.padding_width * 2 - this.quiet * 2,
       height: height - this.border_size * 2,
       top: this.border_size - 4,
       left: this.padding_width + this.quiet,
     };
-  
+
     this.ctx = ctx;
     this.fg = '#000000';
     this.bg = '#ffffff';
-  
+
     // fill background
     this.fillBgRect(0, 0, width, height);
-  
+
     // fill center to create border
     this.fillBgRect(0, this.border_size, width, height - this.border_size * 2);
   }
 
-  _fillRect (x, y, width, height, color) {
+  _fillRect(x, y, width, height, color) {
     this.ctx.setFillStyle(color);
     this.ctx.fillRect(x, y, width, height);
   }
 
-  fillFgRect (x, y, width, height) {
+  fillFgRect(x, y, width, height) {
     this._fillRect(x, y, width, height, this.fg);
   }
 
