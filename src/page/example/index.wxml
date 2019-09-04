@@ -45,6 +45,8 @@
       <view>定时器应该放到一个组件当中</view>
       <view style="font-size: 30rpx">{{days}}天{{hours}}时{{minutes}}分{{seconds}}秒</view>
       <timer days="{{days}}" hours="{{hours}}" minutes="{{minutes}}" seconds="{{seconds}}"></timer>
+      <timer2 countDownTime="{{countDownTime}}"></timer2>
+
     </view>
   </component-test>
   <component-test>
@@ -53,15 +55,24 @@
       <button bind:tap="showPickerView">显示pickerView</button>
     </view>
   </component-test>
-  <pickerView
-  mode="{{pickerViewData.mode}}"
-  pickerValue="{{pickerViewData.pickerValue}}"
-  pickerValueSingleArray="{{pickerViewData.pickerValueSingleArray}}"
-  wx:if="{{isShowPickerView}}"></pickerView>
+  <pickerView mode="{{pickerViewData.mode}}" pickerValue="{{pickerViewData.pickerValue}}"
+    pickerValueSingleArray="{{pickerViewData.pickerValueSingleArray}}" wx:if="{{isShowPickerView}}"></pickerView>
   <component-test>
     <view class="title" slot="title">PickerView</view>
     <view slot="info">
       <button bind:tap="handleDrawImg">绘制分享页面</button>
+    </view>
+  </component-test>
+  <component-test>
+    <view class="title" slot="title">生成二维码和条形码</view>
+    <view slot="info">
+      <view>
+        <canvas canvas-id="barcode" />
+      </view>
+      <view>
+        <canvas canvas-id="qrcode" />
+      </view>
+      <button bind:tap="handleDrawQrcode">绘制二维码</button>
     </view>
   </component-test>
 </view>

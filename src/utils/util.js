@@ -213,6 +213,10 @@ function countdownTimer(name = 'timer') {
     this.triggerEvent('saveCountDown', { days, hours, minutes, seconds });
   }, 1000);
 }
+
+function countdownTimer2() {
+  console.log('arguments---', arguments);
+}
 // 验证身份证号
 function idCardValidate(idCard) {
   return /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|x)$)/i.test(idCard);
@@ -285,4 +289,5 @@ module.exports = {
   timeDiff,
   idCardValidate,
   transformArr,
+  countdownTimer2,
 };

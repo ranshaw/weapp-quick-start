@@ -3,6 +3,7 @@
 import { navList } from './services/index';
 import { throttle, countdownTimer } from '/utils/util';
 import create from '/utils/create';
+import canvas from '/utils/canvas/index';
 import store from '/page/globalStore';
 import 'minapp';
 
@@ -18,6 +19,7 @@ create.Page({
     minutes: '11',
     seconds: '00',
     isShowPickerView: false,
+    countDownTime: new Date('2019', '9', '3').getTime(),
     pickerViewData: {
       mode: 'selector',
       pickerValue: [0],
@@ -36,6 +38,7 @@ create.Page({
         },
       ],
     },
+    code: '23232323',
   },
   inputChange({ detail: { value } }) {
     console.log(value);
@@ -105,5 +108,9 @@ create.Page({
     wx.navigateTo({
       url: '/page/drawImg/index',
     });
+  },
+  handleDrawQrcode() {
+    canvas.barcode('barcode', this.data.code, 680, 200);
+    canvas.qrcode('qrcode', this.data.code, 420, 420);
   },
 });

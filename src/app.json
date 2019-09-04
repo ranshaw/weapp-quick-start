@@ -15,24 +15,24 @@
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "",
-    "navigationBarBackgroundColor": "#EE5C29"
+    "navigationBarBackgroundColor": "#FF6666"
   },
   "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#EE5C29",
+    "color": "#333333",
+    "selectedColor": "#FF6666",
     "backgroundColor": "#FFFFFF",
     "list": [
       {
         "pagePath": "page/home/home",
-        "text": "示例",
+        "text": "组件示例",
         "iconPath": "assets/images/tab/ico1.png",
         "selectedIconPath": "assets/images/tab/ico1-a.png"
       },
       {
         "pagePath": "page/example/index",
-        "text": "测试",
-        "iconPath": "assets/images/tab/ico3.png",
-        "selectedIconPath": "assets/images/tab/ico3-a.png"
+        "text": "常用示例",
+        "iconPath": "assets/images/tab/ico2.png",
+        "selectedIconPath": "assets/images/tab/ico2-a.png"
       }
     ]
   },

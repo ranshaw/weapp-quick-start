@@ -4,6 +4,7 @@
     "component-test": "./components/example/index",
     "button-test": "./components/button/index",
     "timer": "./components/timer/index",
-    "pickerView": "../../components/pickerView/index"
+    "pickerView": "../../components/pickerView/index",
+    "timer2": "./components/timer2/index"
   }
 }
