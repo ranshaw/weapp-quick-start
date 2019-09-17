@@ -1,0 +1,43 @@
+<view class="page">
+  <text class="page-title">With OAuth Demo Page</text>
+  <view class="section">
+    <text class="title">userInfo 授权示例</text>
+    <with-oauth bind:auth="handleAuthUserInfo" skip-action="{{false}}">
+      <navigator url="/apps/hospital/index">
+        <view class="slot">
+          <text class="slot-text">若已登录，您将前往在线问诊页面，否则，您将在授权登录完成之后前往在线问诊页面</text>
+        </view>
+      </navigator>
+    </with-oauth>
+  </view>
+  <view class="section">
+    <text class="title">userInfo 跳过问诊流程</text>
+    <with-oauth bind:auth="handleAuthUserInfo">
+      <navigator url="/apps/hospital/index">
+        <view class="slot">
+          <text class="slot-text">若已登录，您将前往在线问诊页面，否则，您将在授权登录完成之后前往在线问诊页面</text>
+        </view>
+      </navigator>
+    </with-oauth>
+  </view>
+  <view class="section">
+    <text class="title">userInfo & mobile</text>
+    <with-oauth bind:auth="handleAuthUserInfo" type="mobile">
+      <navigator url="/apps/hospital/index">
+        <view class="slot">
+          <text class="slot-text">若已登录，您将前往在线问诊页面，否则，您将在授权登录完成之后前往在线问诊页面</text>
+        </view>
+      </navigator>
+    </with-oauth>
+  </view>
+  <view class="section">
+    <text class="title">userInfo & mobile 允许跳过手机号验证</text>
+    <with-oauth bind:auth="handleAuthUserInfo" type="mobile" allow-skip-mobile="{{true}}">
+      <navigator url="/apps/hospital/index">
+        <view class="slot">
+          <text class="slot-text">若已登录，您将前往在线问诊页面，否则，您将在授权登录完成之后前往在线问诊页面</text>
+        </view>
+      </navigator>
+    </with-oauth>
+  </view>
+</view>

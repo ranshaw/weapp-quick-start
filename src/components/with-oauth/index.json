@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mobile-auth-form": "./components/mobile-auth-form/index"
+  }
+}

@@ -12,7 +12,7 @@ const apiBaseUrls = {
  * - `staging`：测试环境
  * - `production`：生产环境
  */
-export const ENV = process.env.NODE_ENV;
-export const API_BASE_URL = apiBaseUrls[ENV] || apiBaseUrls.default;
-export const APP_ID = 'wxa2acb0dea882bcf7';
-export const WEBAPPS_BASE_URL = 'https://webapps.chongaitianxia.cn';
+// export const ENV = process.env.NODE_ENV;
+// export const API_BASE_URL = apiBaseUrls[ENV] || apiBaseUrls.default;
+// export const APP_ID = 'wxa2acb0dea882bcf7';
+// export const WEBAPPS_BASE_URL = 'https://webapps.chongaitianxia.cn';

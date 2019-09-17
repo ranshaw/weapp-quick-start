@@ -10,7 +10,8 @@
     "page/market/fruitMachine/fruitMachine",
     "page/market/gridcard/gridcard",
     "page/market/shake/shake",
-    "page/market/gestureLock/gestureLock"
+    "page/market/gestureLock/gestureLock",
+    "page/withAuth/withAuth"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -42,6 +43,8 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "usingComponents": {},
+  "usingComponents": {
+    "with-oauth": "/components/with-oauth/index"
+  },
   "debug": false
 }

@@ -1,0 +1,26 @@
+@assets-base-url: 'https://catx-saas.oss-cn-beijing.aliyuncs.com/application-assets/mini-program';
+@image-assets-base-url: '@{assets-base-url}/images';
+
+// 色彩体系
+@black: #2e2e2e;
+@black-light: #363636;
+@gray: #757575;
+@gray-light: #ccc;
+@gray-smoky: #f7f7f7;
+@white: #fff;
+@yellow: #fdbf10;
+@green: #8cc53f;
+
+// 字体大小
+@font-size-tiny: 20rpx;
+@font-size-small: 24rpx;
+@font-size: 28rpx;
+@font-size-large: 32rpx;
+@font-size-huge: 36rpx;
+
+// 间距
+@gutter-tiny: 10rpx;
+@gutter-small: 20rpx;
+@gutter: 40rpx;
+@gutter-large: 60rpx;
+@gutter-huge: 120rpx;

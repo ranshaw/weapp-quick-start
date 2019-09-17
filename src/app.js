@@ -1,10 +1,15 @@
 import 'minapp';
-// console.log('env--', process.env.NODE_ENV);
+import launch from './launch';
 App({
   data: {
     preload: null,
   },
-  async onLaunch() {
+  globalData: {
+    statusBarHeight: 88,
+  },
+  async onLaunch(options) {
+    // 扩展 App
+    launch(this, options);
     const n = await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(1);

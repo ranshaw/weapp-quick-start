@@ -1,0 +1,32 @@
+.page {
+  padding: 20rpx;
+
+  &-title {
+    font-size: 48rpx;
+    font-weight: 600;
+    color: #363636;
+    line-height: 100rpx;
+    display: block;
+  }
+
+  .section {
+    margin: 20rpx 0;
+    padding: 30rpx;
+    background-color: #f0f0f0;
+    color: #757575;
+    border-radius: 8rpx;
+
+    .title {
+      font-size: 32rpx;
+      font-weight: bold;
+      color: #07c160;
+    }
+
+    .slot {
+      padding: 20rpx;
+      border-radius: 8rpx;
+      background-color: #d6ebd2;
+      margin-top: 20rpx;
+    }
+  }
+}

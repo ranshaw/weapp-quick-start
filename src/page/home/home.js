@@ -22,6 +22,12 @@ create.Page({
         name: '常用UI组件',
         url: 'https://ranshaw.oss-cn-shanghai.aliyuncs.com/example/pop-code.png',
       },
+      {
+        id: 'withAuth',
+        sub: 'withAuth',
+        name: '小程序登录',
+        url: '',
+      },
     ],
   },
 });

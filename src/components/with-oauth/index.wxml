@@ -1,0 +1,19 @@
+<view class="oauth">
+  <slot></slot>
+  <view class="trigger" wx:if="{{needAuth}}" bind:tap="handleTriggerTap" />
+  <button class="trigger" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" wx:if="{{needAuth && skipAction &&!hasUserInfo}}" bind:tap="handleTriggerButtonTap" />
+  <view class="modal {{animation}}" wx:if="{{!hasUserInfo && actionModalVisible}}">
+    <view class="mask" bind:tap="handleMaskTap" />
+    <view class="body">
+      <text>授权</text>
+      <button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">授权获取您的用户信息</button>
+    </view>
+  </view>
+  <view class="modal {{animation}}" wx:if="{{needMobile && hasUserInfo && !hasMobile && actionModalVisible}}">
+    <view class="mask" bind:tap="handleMaskTap" />
+    <view class="body">
+      <mobile-auth-form bind:auth="handleMobileAuth" bind:oauth:start="handleMobileOAuthStart" bind:oauth:fail="handleMobileOAuthFail" bind:skip="handleMobileOAuthSkip" bind:cancel="handleMobileOAuthCancel" allow-skip="{{allowSkipMobile}}" />
+    </view>
+  </view>
+  <view class="loading" wx:if="{{loading}}">请稍后……</view>
+</view>

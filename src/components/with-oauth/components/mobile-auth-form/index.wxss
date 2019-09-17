@@ -1,0 +1,216 @@
+@import '/theme/variables.wxss';
+
+.form {
+  background: #fff;
+
+  &.oauth {
+    // 开放授权微信手机号模式下，将表单整个不展示
+    opacity: 0;
+  }
+
+  .title {
+    height: 150rpx;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    padding: 40rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20rpx;
+
+    &-text {
+      font-size: 48rpx;
+      color: #2e2e2e;
+      flex: 1;
+    }
+
+    .skip-text {
+      font-size: 24rpx;
+      color: #999;
+    }
+  }
+
+  .button {
+    height: 80rpx;
+    border: 1rpx solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rpx;
+    border-radius: 6rpx;
+
+    &.primary {
+      background-color: #2e2e2e;
+      border-color: #2e2e2e;
+      color: #fff;
+    }
+
+    &.disabled {
+      opacity: 0.7;
+    }
+  }
+
+  .field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 6rpx;
+    padding: 30rpx 40rpx;
+    box-sizing: border-box;
+
+    .label {
+      font-size: 28rpx;
+      color: #2e2e2e;
+      width: 120rpx;
+      margin-right: 20rpx;
+      display: none;
+
+      &:after {
+        content: ':';
+      }
+    }
+
+    .input {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      input {
+        width: 100%;
+        color: #333;
+        font-size: 32rpx;
+        font-weight: 600;
+      }
+
+      &-placeholder {
+        color: #999;
+        font-size: 30rpx;
+        font-weight: 500;
+      }
+    }
+
+    &.check {
+      .checkbox {
+        width: 25rpx;
+        height: 25rpx;
+        background-size: 180%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('@{assets-base-url}/assets/checkbox-gray.png');
+        margin-right: 11rpx;
+
+        &.checked {
+          background-image: url('@{assets-base-url}/assets/checkbox-checked-pink.png');
+        }
+      }
+
+      text {
+        font-size: 22rpx;
+        color: #757575;
+
+        &.highlight {
+          color: #f8779f;
+        }
+      }
+    }
+
+    .button {
+      font-size: 24rpx;
+      padding: 5rpx 10rpx;
+      height: 44rpx;
+      border-color: transparent;
+      background-color: #feeef3;
+      color: #f8779f;
+      margin-bottom: 0;
+      min-width: 148rpx;
+
+      &.diabled {
+        background-color: #f7f7f7;
+        color: #ccc;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40rpx;
+
+    .button {
+      height: 86rpx;
+      border-radius: 43rpx;
+      border: none;
+      font-size: 28rpx;
+      font-weight: 600;
+
+      &:before {
+        content: '';
+        display: flex;
+        width: 44rpx;
+        height: 44rpx;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 11rpx;
+      }
+    }
+
+    .submit {
+      flex: 8;
+      background: linear-gradient(180deg, rgba(255, 140, 173, 1) 0%, rgba(255, 95, 131, 1) 100%);
+      box-shadow: 0px 5px 18px 0px rgba(255, 196, 209, 1);
+      color: #fff;
+
+      &:before {
+        background-image: url('@{assets-base-url}/assets/avatar-button-icon-pink.png');
+      }
+
+      &.disabled {
+        opacity: 0.5;
+      }
+    }
+
+    .wechat {
+      margin-left: 50rpx;
+      flex: 13;
+      background: linear-gradient(180deg, rgba(150, 173, 255, 1) 0%, rgba(110, 108, 255, 1) 100%);
+      box-shadow: 0px 5px 18px 0px rgba(186, 193, 255, 1);
+      color: #fff;
+      &:before {
+        background-image: url('@{assets-base-url}/assets/wechat-button-icon-white.png');
+      }
+    }
+  }
+
+  .hr {
+    margin: 0 40rpx;
+    height: 2rpx;
+    background-color: #f7f7f7;
+  }
+}
+
+.page.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text {
+    font-size: 48rpx;
+    color: #757575;
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "With OAuth 示例",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 100,
+  "disableScroll": false,
+  "disableSwipeBack": false,
+  "navigationStyle": "default",
+  "usingComponents": {}
+}
