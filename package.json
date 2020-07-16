@@ -48,7 +48,7 @@
   "dependencies": {
     "babel-eslint": "^8.2.6",
     "babel-runtime": "^6.26.0",
-    "lodash": "4.17.5",
+    "lodash": "4.17.19",
     "vant-weapp": "^0.5.17",
     "weapp-util-create-plugin": "^0.1.5",
     "moment": "^2.24.0",
